@@ -10,13 +10,18 @@ export default function Hero() {
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">
-          <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+          <h1 className="mb-5 text-5xl font-bold">LIMS</h1>
           <p className="mb-5">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+            Torne-se o estímulo para a inovação tecnológica.
           </p>
-          <button className="btn btn-primary">Get Started</button>
+          <p className="mb-5">
+            Seja co-criador da nova geração de soluções tecnológicas.
+          </p>
+          <p className="mb-5">
+            Dê início à revolução com suas contribuições e ideias.
+          </p>
+
+          {/* <button className="btn btn-primary">Get Started</button> */}
         </div>
       </div>
     </div>
