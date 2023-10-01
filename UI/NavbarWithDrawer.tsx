@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function NavbarWithDrawer() {
   return (
     <div className="drawer">
@@ -26,22 +28,24 @@ export default function NavbarWithDrawer() {
               </svg>
             </label>
           </div>
-          <div className="flex-1 px-2 mx-2">LIMS</div>
+          <div className="flex-1 px-2 mx-2">
+            <Link href={"/"}>LIMS</Link>
+          </div>
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
               <li>
-              <a>Sobre nós</a>
-            </li>
-            <li>
-              <a>Projetos</a>
-            </li>
-            <li>
-              <a>Eventos</a>
-            </li>
-            <li>
-              <a>Fale conosco</a>
-            </li>
+                <a>Sobre nós</a>
+              </li>
+              <li>
+                <a>Projetos</a>
+              </li>
+              <li>
+                <a>Eventos</a>
+              </li>
+              <li>
+                <a>Fale conosco</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -56,17 +60,17 @@ export default function NavbarWithDrawer() {
         <ul className="menu p-4 w-80 min-h-full bg-base-200">
           {/* Sidebar content here */}
           <li>
-              <a>Sobre nós</a>
-            </li>
-            <li>
-              <a>Projetos</a>
-            </li>
-            <li>
-              <a>Eventos</a>
-            </li>
-            <li>
-              <a>Fale conosco</a>
-            </li>
+            <a>Sobre nós</a>
+          </li>
+          <li>
+            <a>Projetos</a>
+          </li>
+          <li>
+            <a>Eventos</a>
+          </li>
+          <li>
+            <a>Fale conosco</a>
+          </li>
         </ul>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import ButtonWithIcon from "@/components/ButtonWithIcon";
 import Card from "@/components/Card";
 import ArrowRightIcon from "@/components/icons/ArrowRightIcon";
+import Link from "next/link";
 
 export default function Eventos() {
   return (
@@ -15,7 +16,9 @@ export default function Eventos() {
           <Card />
         </div>
         <div className="py-4">
-          <ButtonWithIcon icon={<ArrowRightIcon />} />
+          <Link href={"/eventos"}>
+            <ButtonWithIcon icon={<ArrowRightIcon />} />
+          </Link>
         </div>
       </div>
     </div>
