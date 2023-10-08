@@ -5,10 +5,11 @@ export default function SobreNos() {
     <div className="hero min-h-screen bg-primary">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <Image
-          src={"https://picsum.photos/seed/picsum/200/300"}
-          width={200}
-          height={300}
+          src={"https://picsum.photos/720"}
+          width={384}
+          height={720}
           alt="imagem"
+          className="w-auto"
         />
         {/* <img src="https://picsum.photos/seed/picsum/200/300" className="max-w-sm rounded-lg shadow-2xl" /> */}
         <div>

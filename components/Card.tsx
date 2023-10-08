@@ -5,9 +5,9 @@ export default function Card() {
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
         <Image
-          src={"https://picsum.photos/seed/picsum/200/300"}
-          width={200}
-          height={300}
+          src={"https://picsum.photos/720"}
+          width={384}
+          height={720}
           alt="imagem"
         />
       </figure>
