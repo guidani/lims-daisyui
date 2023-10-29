@@ -1,10 +1,12 @@
-export default function Hero() {
+import bgimage from "@/public/teresinaInfo.jpg";
+
+export default async function Hero() {
   return (
     <div
       className="hero min-h-screen"
       style={{
-        backgroundImage:
-          "url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
+        backgroundImage: `url(${bgimage.src})`,
+        // "url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
       }}
     >
       <div className="hero-overlay bg-opacity-60"></div>
@@ -20,8 +22,6 @@ export default function Hero() {
           <p className="mb-5">
             Dê início à revolução com suas contribuições e ideias.
           </p>
-
-          {/* <button className="btn btn-primary">Get Started</button> */}
         </div>
       </div>
     </div>
