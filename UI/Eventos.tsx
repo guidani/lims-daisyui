@@ -1,9 +1,11 @@
 import ButtonWithIcon from "@/components/ButtonWithIcon";
 import Card from "@/components/Card";
 import ArrowRightIcon from "@/components/icons/ArrowRightIcon";
+import { GetAllEvents } from "@/services/hygraph/GetAllEvents";
 import Link from "next/link";
 
-export default function Eventos() {
+export default async function Eventos() {
+  await GetAllEvents();
   return (
     <div className="bg-accent py-4">
       <div className="container mx-auto">
