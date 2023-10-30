@@ -1,4 +1,4 @@
-export const GetAllPosts = async () => {
+export const GetHomePagePosts = async () => {
   try {
     const headers = {
       "content-type": "application/json",
@@ -7,7 +7,7 @@ export const GetAllPosts = async () => {
 
     const requestBody = {
       query: `query GetAllPostagens {
-        postagems {
+        postagems(last: 3) {
           id
           slug
           title

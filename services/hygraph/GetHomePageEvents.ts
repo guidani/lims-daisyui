@@ -1,4 +1,4 @@
-export const GetAllPosts = async () => {
+export const GetHomePageEvents = async () => {
   try {
     const headers = {
       "content-type": "application/json",
@@ -6,8 +6,8 @@ export const GetAllPosts = async () => {
     };
 
     const requestBody = {
-      query: `query GetAllPostagens {
-        postagems {
+      query: `query GetHomePageEvents {
+        eventos (last: 3) {
           id
           slug
           title
@@ -31,7 +31,7 @@ export const GetAllPosts = async () => {
       await fetch(process.env.NEXT_PUBLIC_HYGRAPH_URL || "", options)
     ).json();
     console.log(response?.data);
-    return response?.data?.postagems;
+    return response?.data?.eventos;
   } catch (error) {
     return error;
   }

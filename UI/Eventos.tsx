@@ -10,7 +10,7 @@ export default async function Eventos() {
     <div className="bg-accent py-4">
       <div className="container mx-auto">
         <div className="w-full py-4">
-          <h1 className="text-5xl font-bold">Eventos</h1>
+          <h1 className="text-5xl font-bold text-purple-600">Eventos</h1>
         </div>
         <div className="flex flex-col items-center gap-4 lg:flex-row lg:justify-between">
           <Card />

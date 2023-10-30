@@ -1,7 +1,9 @@
-import React from 'react'
-
 export default function page() {
   return (
-    <div>Todos os eventos são listados aqui</div>
-  )
+    <div className="container mx-auto">
+      <div className="py-4">
+        <div>Todos os eventos são listados aqui</div>
+      </div>
+    </div>
+  );
 }

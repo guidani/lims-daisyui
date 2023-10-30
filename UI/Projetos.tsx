@@ -1,9 +1,11 @@
 import ButtonWithIcon from "@/components/ButtonWithIcon";
 import Card from "@/components/Card";
 import ArrowRightIcon from "@/components/icons/ArrowRightIcon";
+import { GetAllPosts } from "@/services/hygraph/GetAllPosts";
 import Link from "next/link";
 
-export default function Projetos() {
+export default async function Projetos() {
+  await GetAllPosts()
   return (
     <div className="bg-base-200 py-4">
       <div className="container mx-auto">
