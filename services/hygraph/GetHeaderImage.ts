@@ -6,14 +6,16 @@ export const GetHeaderImagem = async () => {
     };
 
     const requestBody = {
-      query: `query Imagens {
-        limsimagens (where: {id: "clobqvexr2ygy0bkoee97yakt"}) {
+      query: `query GetHeaderImage {
+        imagens(skip: 0) {
           imagem {
             url
             id
           }
+          title
         }
-      }`,
+      }
+      `,
     };
 
     const options = {
@@ -25,8 +27,11 @@ export const GetHeaderImagem = async () => {
     const response = await (
       await fetch(process.env.NEXT_PUBLIC_HYGRAPH_URL || "", options)
     ).json();
-    console.log(response?.data.imagem.url);
-    return response?.data?.limsimagens;
+    console.log(
+      "🚀 ~ file: GetHeaderImage.ts:29 ~ GetHeaderImagem ~ response:",
+      response?.data
+    );
+    return response?.data?.imagens;
   } catch (error) {
     return error;
   }

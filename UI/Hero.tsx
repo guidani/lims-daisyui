@@ -1,6 +1,8 @@
 import bgimage from "@/public/teresinaInfo.jpg";
+import { GetHeaderImagem } from "@/services/hygraph/GetHeaderImage";
 
 export default async function Hero() {
+  await GetHeaderImagem();
   return (
     <div
       className="hero min-h-screen"

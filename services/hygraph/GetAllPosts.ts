@@ -7,7 +7,7 @@ export const GetAllPosts = async () => {
 
     const requestBody = {
       query: `query GetAllPostagens {
-        postagems {
+        postagems(skip: 0) {
           id
           slug
           title
@@ -17,7 +17,7 @@ export const GetAllPosts = async () => {
             url
           }
         }
-      }
+      }      
       `,
     };
 
