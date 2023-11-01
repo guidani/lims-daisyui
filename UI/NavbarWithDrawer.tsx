@@ -5,6 +5,9 @@ import QuestionIcon from "@/components/icons/QuestionIcon";
 import ToolsIcon from "@/components/icons/ToolsIcon";
 import Link from "next/link";
 
+import limsLogo from "@/public/LIMSLogoNova.png";
+import Image from "next/image";
+
 export default function NavbarWithDrawer() {
   return (
     <div className="drawer z-10">
@@ -34,7 +37,9 @@ export default function NavbarWithDrawer() {
             </label>
           </div>
           <div className="flex-1 px-2 mx-2">
-            <Link href={"/"}>LIMS</Link>
+            <Link href={"/"}>
+            <Image src={limsLogo} alt="LIMS Logo" width={100} height={50} />
+            </Link>
           </div>
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
@@ -66,7 +71,8 @@ export default function NavbarWithDrawer() {
           {/* Sidebar content here */}
           <li>
             <a href="/" className="text-2xl">
-              <HouseIcon /> LIMS
+              {/* <HouseIcon /> LIMS */}
+              <Image src={limsLogo} alt="LIMS Logo" width={100} height={50} />
             </a>
           </li>
           <li>
