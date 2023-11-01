@@ -1,6 +1,5 @@
 import CalendarIcon from "@/components/icons/CalendarIcon";
 import EnvelopeIcon from "@/components/icons/EnvelopeIcon";
-import HouseIcon from "@/components/icons/HouseIcon";
 import QuestionIcon from "@/components/icons/QuestionIcon";
 import ToolsIcon from "@/components/icons/ToolsIcon";
 import Link from "next/link";
@@ -38,20 +37,20 @@ export default function NavbarWithDrawer() {
           </div>
           <div className="flex-1 px-2 mx-2">
             <Link href={"/"}>
-            <Image src={limsLogo} alt="LIMS Logo" width={100} height={50} />
+              <Image src={limsLogo} alt="LIMS Logo" width={100} height={50} />
             </Link>
           </div>
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
               <li>
-                <a href="#sobre-nos">Sobre nós</a>
+                <a href="/#sobre-nos">Sobre nós</a>
               </li>
               <li>
-                <a href="#projetos">Projetos</a>
+                <a href="projetos">Projetos</a>
               </li>
               <li>
-                <a href="#eventos">Eventos</a>
+                <a href="eventos">Eventos</a>
               </li>
               <li>
                 <a href="#footer">Fale conosco</a>
