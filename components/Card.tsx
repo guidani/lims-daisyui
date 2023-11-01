@@ -8,7 +8,6 @@ type CardProps = {
   urlTo?: string;
 };
 
-const sampleImageUrl = "https://picsum.photos/720";
 const sampleData = {
   sampleImageUrl: "https://picsum.photos/720",
   sampleTitle: "Title",
