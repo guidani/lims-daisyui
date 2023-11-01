@@ -1,3 +1,8 @@
+import CalendarIcon from "@/components/icons/CalendarIcon";
+import EnvelopeIcon from "@/components/icons/EnvelopeIcon";
+import HouseIcon from "@/components/icons/HouseIcon";
+import QuestionIcon from "@/components/icons/QuestionIcon";
+import ToolsIcon from "@/components/icons/ToolsIcon";
 import Link from "next/link";
 
 export default function NavbarWithDrawer() {
@@ -35,16 +40,16 @@ export default function NavbarWithDrawer() {
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
               <li>
-                <a>Sobre nós</a>
+                <a href="#sobre-nos">Sobre nós</a>
               </li>
               <li>
-                <a>Projetos</a>
+                <a href="#projetos">Projetos</a>
               </li>
               <li>
-                <a>Eventos</a>
+                <a href="#eventos">Eventos</a>
               </li>
               <li>
-                <a>Fale conosco</a>
+                <a href="#footer">Fale conosco</a>
               </li>
             </ul>
           </div>
@@ -60,16 +65,29 @@ export default function NavbarWithDrawer() {
         <ul className="menu p-4 w-80 min-h-full bg-base-200">
           {/* Sidebar content here */}
           <li>
-            <a>Sobre nós</a>
+            <a href="/" className="text-2xl">
+              <HouseIcon /> LIMS
+            </a>
           </li>
           <li>
-            <a>Projetos</a>
+            <a href="/#sobre-nos" className="text-2xl">
+              <QuestionIcon /> Sobre nós
+            </a>
           </li>
           <li>
-            <a>Eventos</a>
+            <a href="projetos" className="text-2xl">
+              <ToolsIcon /> Projetos
+            </a>
           </li>
           <li>
-            <a>Fale conosco</a>
+            <a href="eventos" className="text-2xl">
+              <CalendarIcon /> Eventos
+            </a>
+          </li>
+          <li>
+            <a href="#footer" className="text-2xl">
+              <EnvelopeIcon /> Fale conosco
+            </a>
           </li>
         </ul>
       </div>

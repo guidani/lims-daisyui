@@ -8,7 +8,7 @@ import Link from "next/link";
 export default async function Projetos() {
   const resp: PostagemType[] = await GetHomePagePosts();
   return (
-    <div className="bg-base-200 py-4">
+    <div className="bg-base-200 py-4" id="projetos">
       <div className="container mx-auto">
         <div className="w-full py-4">
           <h1 className="text-5xl font-bold pl-4">Projetos</h1>

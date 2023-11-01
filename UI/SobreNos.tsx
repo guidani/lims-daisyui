@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function SobreNos() {
   return (
-    <div className="hero min-h-screen bg-primary">
+    <div className="hero min-h-screen bg-primary" id="sobre-nos">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <Image
           src={"https://picsum.photos/720"}

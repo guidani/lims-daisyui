@@ -5,6 +5,7 @@ export default async function Hero() {
   await GetHeaderImagem();
   return (
     <div
+    id="hero"
       className="hero min-h-screen"
       style={{
         backgroundImage: `url(${bgimage.src})`,
