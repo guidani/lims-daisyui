@@ -1,6 +1,7 @@
 import ButtonWithIcon from "@/components/ButtonWithIcon";
 import Card from "@/components/Card";
 import ArrowRightIcon from "@/components/icons/ArrowRightIcon";
+import eventoFig from "@/public/eventosFigura.png";
 import { GetHomePageEvents } from "@/services/hygraph/GetHomePageEvents";
 import { EventoType } from "@/types/EventoType";
 import Link from "next/link";
@@ -8,7 +9,13 @@ import Link from "next/link";
 export default async function Eventos() {
   const resp: EventoType[] = await GetHomePageEvents();
   return (
-    <div className="bg-slate-300 py-4" id="eventos">
+    <div
+      className="py-4 bg-white"
+      id="eventos"
+      style={{
+        backgroundImage: `url(${eventoFig.src})`,
+      }}
+    >
       <div className="container mx-auto">
         <div className="w-full py-4">
           <h1 className="text-5xl font-bold text-purple-600 pl-4">Eventos</h1>

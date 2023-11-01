@@ -1,4 +1,4 @@
-import bgimage from "@/public/teresinaInfo.jpg";
+import projImage from "@/public/project_sem_branco.png";
 import { GetHeaderImagem } from "@/services/hygraph/GetHeaderImage";
 
 export default async function Hero() {
@@ -6,15 +6,15 @@ export default async function Hero() {
   return (
     <div
       id="hero"
-      className="hero min-h-screen"
+      className="hero min-h-screen bg-white"
       style={{
-        backgroundImage: `url(${bgimage.src})`,
-        // "url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
+        backgroundImage: `url(${projImage.src})`,
+        backgroundAttachment: "fixed",
       }}
     >
-      <div className="hero-overlay bg-opacity-80"></div>
-      <div className="hero-content text-center text-neutral-content">
-        <div className="">
+      {/* <div className="hero-overlay"></div> */}
+      <div className="hero-content text-center w-full bg-slate-900 bg-opacity-80 text-white rounded-md">
+        <div className=" w-full">
           <h1 className="mb-5 text-5xl font-bold">LIMS</h1>
           <p className="mb-5 text-2xl font-bold">
             Torne-se o estímulo para a inovação tecnológica.

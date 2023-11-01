@@ -1,3 +1,4 @@
+import theInfo from "@/public/teresinaInfo.jpg";
 import Image from "next/image";
 
 export default function SobreNos() {
@@ -5,9 +6,9 @@ export default function SobreNos() {
     <div className="hero min-h-screen bg-primary" id="sobre-nos">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <Image
-          src={"https://picsum.photos/720"}
-          width={384}
-          height={720}
+          src={theInfo.src}
+          width={720}
+          height={384}
           alt="imagem"
           className="w-auto"
         />

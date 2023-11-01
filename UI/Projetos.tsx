@@ -1,6 +1,7 @@
 import ButtonWithIcon from "@/components/ButtonWithIcon";
 import Card from "@/components/Card";
 import ArrowRightIcon from "@/components/icons/ArrowRightIcon";
+import projFigura from "@/public/projetosFigura.png";
 import { GetHomePagePosts } from "@/services/hygraph/GetHomePagePosts";
 import { PostagemType } from "@/types/PostagemType";
 import Link from "next/link";
@@ -8,10 +9,16 @@ import Link from "next/link";
 export default async function Projetos() {
   const resp: PostagemType[] = await GetHomePagePosts();
   return (
-    <div className="bg-base-200 py-4" id="projetos">
+    <div
+      className="py-4 bg-white"
+      id="projetos"
+      style={{
+        backgroundImage: `url(${projFigura.src})`,
+      }}
+    >
       <div className="container mx-auto">
         <div className="w-full py-4">
-          <h1 className="text-5xl font-bold pl-4">Projetos</h1>
+          <h1 className="text-5xl font-bold pl-4 text-slate-950">Projetos</h1>
         </div>
         <div className="flex flex-col items-center gap-4 lg:flex-row lg:justify-between">
           {resp.map((item, index) => {
