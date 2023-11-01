@@ -2,10 +2,11 @@ import ButtonWithIcon from "@/components/ButtonWithIcon";
 import Card from "@/components/Card";
 import ArrowRightIcon from "@/components/icons/ArrowRightIcon";
 import { GetAllPosts } from "@/services/hygraph/GetAllPosts";
+import { PostagemType } from "@/types/PostagemType";
 import Link from "next/link";
 
 export default async function Projetos() {
-  await GetAllPosts()
+  const resp: PostagemType[] = await GetAllPosts();
   return (
     <div className="bg-base-200 py-4">
       <div className="container mx-auto">
@@ -13,9 +14,20 @@ export default async function Projetos() {
           <h1 className="text-5xl font-bold">Projetos</h1>
         </div>
         <div className="flex flex-col items-center gap-4 lg:flex-row lg:justify-between">
-          <Card />
-          <Card />
-          <Card />
+          {/* <Card /> */}
+          {/* <Card /> */}
+          {/* <Card /> */}
+          {resp.map((item, index) => {
+            return (
+              <Card
+                key={item.id}
+                imgSrc={item.imagem?.url}
+                title={item.title}
+                resume={item.resumo}
+                urlTo={"/projetos/"+item.slug}
+              />
+            );
+          })}
         </div>
         <div className="py-4">
           <Link href={"/projetos"}>
