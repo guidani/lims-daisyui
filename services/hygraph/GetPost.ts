@@ -6,7 +6,19 @@ export const GetPost = async (slug: string) => {
     };
 
     const requestBody = {
-      query: `
+      query: `query GetPostagem {
+        postagem(where: {slug: "${slug}"}) {
+          imagem {
+            url
+            id
+          }
+          conteudo {
+            text
+          }
+          title
+          resumo
+        }
+      }
       `,
     };
 

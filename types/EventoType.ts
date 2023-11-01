@@ -1,4 +1,7 @@
 import { ImagemType } from "./ImagemType";
+type ConteudoType = {
+  text?: string;
+};
 
 export type EventoType = {
   id?: string;
@@ -6,4 +9,5 @@ export type EventoType = {
   title?: string;
   resumo?: string;
   imagem?: ImagemType;
+  conteudo?: ConteudoType;
 };
