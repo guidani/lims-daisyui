@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Site LIMS
 
-## Getting Started
+## Como configurar o projeto (localmente)
 
-First, run the development server:
+- Requisitos: `NodeJS 18+`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Instalar dependencias: `$ pnpm` ou `$ npm install` ou `$ yarn`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Rodar o projeto: `$ pnpm dev` ou `$ yarn dev` ou `npm run dev`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Como configurar o CMS (Hygraph)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Criar um arquivo `.env.local` e copiar o conteúdo do arquivo `.env.local.example` para ele.
 
-## Learn More
+- Criar uma conta no site `https://app.hygraph.com/` e criar um novo projeto com o nome que quiser.
 
-To learn more about Next.js, take a look at the following resources:
+- Ao entrar no projeto clique em `project settings` no menu lateral esquerdo, depois em `Public Content API` no menu que vai abrir. Após isso clique no botão `Yes, initialize defaults`. Após isso clique em `Permanent auth tokens` no menu lateral esquerdo e depois clique no botão `+ add token`, dê um nome para o token, clique na opção `Published` e depois em `add & configure permissions`, na nova página que aparecer clique em `Yes, initialize defaults` nas caixas de `Content Permissions` e `Management API Permissions`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Agora clique em `API Access` no menu lateral esquerdo e copie o conteúdo do item `Content API` e atribua o valor da variável de ambiente `NEXT_PUBLIC_HYGRAPH_URL` no arquivo `.env.local` para ele.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Configurando os 'Schemas' no Hygraph
 
-## Deploy on Vercel
+- Clique em `Schema` no menu lateral e depois em `+add` ao lado de `Models` e dê um nome para o schema, importante que ele fique no singular, e depois clique em `ADD`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Para configurar o Schema, arraste os items do menu lateral direito para o meio. Abaixo tem a descrição de quais Schemas precisam ser criados e as configurações de cada campo.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+
+Nome do schema: Evento
+
+Campos: 
+
+1. title
+- display name: title
+- Field option: marcar `use title as field`
+- Em `Validations`: marcar `Make field required`, `Limit character count` e selecione `Not more then` e atribua o valor de `100`, em `Custom error message` adicione a mensagem de erro que quiser.
+2. slug
+- Display name: slug
+- Marcar a opção `Generate slug from template`, no campo `Slug template` digitle `title`.
+- Marcar a opção `Lowercase`
+- Em `Validations`, marcar as opções: `Make field required`, `Set field as unique` e `Match a specific pattern`
+3. imagem
+- Display name: imagem
+4. resumo
+- Display name: Resumo
+- Em `Validations`, `Limit character count` e selecione `Not more then` e atribua o valor de `999`, em `Custom error message` adicione a mensagem de erro que quiser.
+5. conteudo
+- Display Name: conteudo
+- Embeds: após criar todos os Schemas, edite esse schema para adicionar os demais models neste campo.
+
+---
+
+Nome do schema: postagem
+
+Campos: 
+
+1. title
+- display name: title
+- Field option: marcar `use title as field`
+- Em `Validations`: marcar `Make field required`, `Limit character count` e selecione `Not more then` e atribua o valor de `100`, em `Custom error message` adicione a mensagem de erro que quiser.
+2. slug
+- Display name: slug
+- Marcar a opção `Generate slug from template`, no campo `Slug template` digitle `title`.
+- Marcar a opção `Lowercase`
+- Em `Validations`, marcar as opções: `Make field required`, `Set field as unique` e `Match a specific pattern`
+3. imagem
+- Display name: imagem
+4. resumo
+- Display name: Resumo
+- Em `Validations`, `Limit character count` e selecione `Not more then` e atribua o valor de `999`, em `Custom error message` adicione a mensagem de erro que quiser.
+5. conteudo
+- Display Name: conteudo
+- Embeds: após criar todos os Schemas, edite esse schema para adicionar os demais models neste campo.
+
+---
+
+Nome do schema: Limsimagens
+
+Campos: 
+
+1. title
+- display name: title
+- Marcar a opção: `Use as title field`
+- Em `Validations`: marcar `Make field required`, `Limit character count` e selecione `Not more then` e atribua o valor de `100`, em `Custom error message` adicione a mensagem de erro que quiser.
+3. imagem
+- Display name: imagem
+- Em `Validations`, marcar a opção `make field required`
+
+## Configuração Vercel
+
+- Após subir o projeto na Vercel, ir na página do projeto, clicar e, `Settings` > `Environment Variables` e adicionar as variáveis de ambiente necessárias.
