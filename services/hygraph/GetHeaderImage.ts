@@ -27,10 +27,7 @@ export const GetHeaderImagem = async () => {
     const response = await (
       await fetch(process.env.NEXT_PUBLIC_HYGRAPH_URL || "", options)
     ).json();
-    console.log(
-      "🚀 ~ file: GetHeaderImage.ts:29 ~ GetHeaderImagem ~ response:",
-      response?.data
-    );
+ 
     return response?.data?.imagens;
   } catch (error) {
     return error;

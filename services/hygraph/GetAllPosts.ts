@@ -30,7 +30,6 @@ export const GetAllPosts = async () => {
     const response = await (
       await fetch(process.env.NEXT_PUBLIC_HYGRAPH_URL || "", options)
     ).json();
-    console.log(response?.data);
     return response?.data?.postagems;
   } catch (error) {
     return error;

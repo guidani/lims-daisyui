@@ -30,7 +30,6 @@ export const GetHomePageEvents = async () => {
     const response = await (
       await fetch(process.env.NEXT_PUBLIC_HYGRAPH_URL || "", options)
     ).json();
-    console.log(response?.data);
     return response?.data?.eventos;
   } catch (error) {
     return error;
